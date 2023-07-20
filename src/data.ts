@@ -6,7 +6,7 @@ export enum ReportType {
 export const data: Data = {
   report: [
     {
-      id: 'uuid1',
+      id: 'b213803d-7ff9-47f8-8b41-27a5d97882a9',
       source: 'Salary',
       amount: 6000,
       created_at: new Date(),
@@ -14,7 +14,7 @@ export const data: Data = {
       type: ReportType.INCOME,
     },
     {
-      id: 'uuid2',
+      id: '3c341b18-2e14-4483-8d41-f7c61a4c68b4',
       source: 'Freelo',
       amount: 1200,
       created_at: new Date(),
@@ -22,7 +22,7 @@ export const data: Data = {
       type: ReportType.INCOME,
     },
     {
-      id: 'uuid3',
+      id: '5659ff9e-e1eb-4028-b1aa-5b83ab274999',
       source: 'Gym',
       amount: 1000,
       created_at: new Date(),

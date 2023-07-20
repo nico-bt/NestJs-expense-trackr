@@ -5,6 +5,7 @@ import {
   Get,
   HttpCode,
   Param,
+  ParseUUIDPipe,
   Post,
   Put,
 } from '@nestjs/common';
@@ -21,7 +22,10 @@ export class AppController {
   }
 
   @Get(':id')
-  getReportById(@Param('type') type: ReportType, @Param('id') id: string) {
+  getReportById(
+    @Param('type') type: ReportType,
+    @Param('id', ParseUUIDPipe) id: string,
+  ) {
     return this.appService.getReportById(type, id);
   }
 
