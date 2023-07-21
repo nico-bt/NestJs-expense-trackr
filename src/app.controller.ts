@@ -35,13 +35,17 @@ export class AppController {
   }
 
   @Put(':id')
-  editReport(@Body() body, @Param('id') id, @Param('type') type) {
+  editReport(
+    @Body() body,
+    @Param('id', ParseUUIDPipe) id,
+    @Param('type') type,
+  ) {
     return this.appService.editReport(body, id, type);
   }
 
   @HttpCode(204)
   @Delete(':id')
-  deleteReport(@Param('id') id: string) {
+  deleteReport(@Param('id', ParseUUIDPipe) id: string) {
     return this.appService.deleteReport(id);
   }
 }
