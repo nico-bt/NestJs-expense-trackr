@@ -12,6 +12,7 @@ import {
 } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ReportType } from './data';
+import { CreateReportDto, EditReportDto } from './dtos/report.dto';
 
 @Controller('report/:type')
 export class AppController {
@@ -34,7 +35,7 @@ export class AppController {
 
   @Post()
   createReport(
-    @Body() body,
+    @Body() body: CreateReportDto,
     @Param('type', new ParseEnumPipe(ReportType)) type,
   ) {
     return this.appService.createReport(body, type);
@@ -42,7 +43,7 @@ export class AppController {
 
   @Put(':id')
   editReport(
-    @Body() body,
+    @Body() body: EditReportDto,
     @Param('id', ParseUUIDPipe) id,
     @Param('type', new ParseEnumPipe(ReportType)) type,
   ) {
